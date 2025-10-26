@@ -1,12 +1,12 @@
 # Lab-01
-1. ## Development OS
+## 1. Development OS
 ### Windows 
 Workstation pro with a VM downloaded from here is recomended.
 ### Linux 
 Continue from step 2.
 ### Mac OS
 
-2. ## Installation of missing packages
+## 2. Installation of missing packages
 ```bash
 apt-get update
 ```
@@ -33,7 +33,7 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## Installing the tool-chain
+## 3. Installing the tool-chain
 ```bash
 wget https://github.com/espressif/crosstool-NG/releases/download/esp-12.2.0_20230208/xtensa-esp32s3-elf-12.2.0_20230208-x86_64-linux-gnu.tar.xz
 ```
@@ -53,14 +53,14 @@ echo "export PATH=\$PATH:/opt/xtensa/xtensa-esp32s3-elf/bin" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## Installing development repositories
+## 4. Installing development repositories
 ```bash
 git clone --recurse-submodules https://github.com/radupascale/hectorwatch-nuttx
 ```
 ```bash
 cd hectorwatch-nuttx
 ```
-## Compiling and running
+## 5. Compiling and running
 ```
 cd ~/hectorwatch-nuttx/nuttx
 ```
@@ -70,7 +70,7 @@ cd ~/hectorwatch-nuttx/nuttx
 ```bash
 make -j$(nproc)
 ```
-## To flash the microcontroller 
+## 6. To flash the microcontroller 
 - Press and hold the BOOT button
 - Press RESET once
 - Release the BOOT button
@@ -81,9 +81,13 @@ make flash ESPTOOL_PORT=/dev/ttyACM0 ESPTOOL_BAUD=115200 ESPTOOL_BINDIR=../esp32
 ```
 - After you finish the flashing process Press the RESET button to change the mode from Download to Boot.
 
-## Connecting with the board
+## 7. Connecting with the board
 - Run the command below
 ```bash
  sudo picocom /dev/ttyACM0 -b 115200
 ```
 - Press the Enter button 3 times to unblock the NSH console
+N.B To see all configuration parameters you can use the command below:
+```bash
+./tools/configure.sh -h
+```
