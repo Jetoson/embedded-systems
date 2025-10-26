@@ -92,3 +92,12 @@ N.B To see all configuration parameters you can use the command below:
 ```bash
 ./tools/configure.sh -h
 ```
+## 8. Clean up operations
+- make clean - removes object compiled files only \\
+```bash
+make clean
+```
+- make distclean - removes any file associated with the current configuration to reinitialize the build system from zero. \\
+```bash
+make distclean
+```
