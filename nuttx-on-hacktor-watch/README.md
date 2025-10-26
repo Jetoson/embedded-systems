@@ -86,7 +86,8 @@ make flash ESPTOOL_PORT=/dev/ttyACM0 ESPTOOL_BAUD=115200 ESPTOOL_BINDIR=../esp32
 ```bash
  sudo picocom /dev/ttyACM0 -b 115200
 ```
-- Press the Enter button 3 times to unblock the NSH console
+- Press the Enter button 3 times to unblock the NSH console \\
+
 N.B To see all configuration parameters you can use the command below:
 ```bash
 ./tools/configure.sh -h
