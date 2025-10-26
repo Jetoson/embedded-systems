@@ -1,2 +1,3 @@
-# embedded-systems
-Repository for my embedded projects
+# Embedded Systems
+
+Home to my embedded projects
