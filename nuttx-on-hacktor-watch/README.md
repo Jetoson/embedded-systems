@@ -103,14 +103,49 @@ make distclean
 ```
 
 
-
-
-
-
 # Lab-04
 
  Broker MQTT public:
  ```bash
  broker.hivemq.com
 ```
+
+
+# Lab-05 [LVGL](https://lvgl.io/) 
+
+## Initiate the build system from zero
+```bash
+make distclean
+```
+
+## Compile and run
+```
+cd ~/hectorwatch-nuttx/nuttx
+```
+```bash
+./tools/configure.sh -l hacktorwatch:iot
+```
+```bash
+make menuconfig
+```
+```bash
+make -j$(nproc)
+```
+## Flash in to the micro controller
+- Press and hold the BOOT button
+- Press RESET once
+- Release the BOOT button
+- Then flash the micro controller using the command below
+
+```bash
+make flash ESPTOOL_PORT=/dev/ttyACM0 ESPTOOL_BAUD=115200 ESPTOOL_BINDIR=../esp32s3-bins
+```
+- After you finish the flashing process Press the RESET button to change the mode from Download to Boot.
+
+## Connecting with the board
+- Run the command below
+```bash
+ sudo picocom /dev/ttyACM0 -b 115200
+```
+- Press the Enter button 3 times to unblock the NSH console \\
 
